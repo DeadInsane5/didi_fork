@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/personalize.css">
+    <title>Diet Quiz</title>
+</head>
+<body>
+    <div id="quiz">
+        <h1 id="question">Loading...</h1>
+        <div id="answers">
+            <button onclick="nextQuestion(0)">Option A</button>
+            <button onclick="nextQuestion(1)">Option B</button>
+            <button onclick="nextQuestion(2)">Option C</button>
+            <button onclick="nextQuestion(3)">Option D</button>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "What is a key benefit of a high-fiber diet?",
+                answers: [
+                    "Improves eye health",
+                    "Supports digestive health",
+                    "Increases muscle mass",
+                    "Reduces water retention"
+                ]
+            },
+            {
+                question: "Which food is a good source of healthy fats?",
+                answers: [
+                    "Avocado",
+                    "White bread",
+                    "Soda",
+                    "Candy"
+                ]
+            },
+            {
+                question: "How much water is generally recommended daily for good health?",
+                answers: [
+                    "2 glasses",
+                    "4 cups",
+                    "8 glasses (about 2 liters)",
+                    "Only when thirsty"
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+
+        function loadQuestion() {
+            const questionObj = quizData[currentQuestionIndex];
+            document.getElementById("question").textContent = questionObj.question;
+            const buttons = document.querySelectorAll("#answers button");
+            buttons.forEach((btn, index) => {
+                btn.textContent = questionObj.answers[index];
+            });
+        }
+
+        function nextQuestion(selectedIndex) {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                document.getElementById("quiz").innerHTML = "<h1>✅ Tips for Building a Healthy Diet Routine: Start your day with a balanced breakfast (protein + fiber).Stay hydrated — aim for at least 8 glasses of water daily. Include whole foods: fruits, vegetables, whole grains, and lean proteins. Limit processed foods and added sugars. Plan meals ahead to avoid unhealthy last-minute choices. Practice mindful eating — eat slowly and stop when you're full. Keep healthy snacks like nuts or yogurt easily accessible. Don’t skip meals — it often leads to overeating later. Reflect weekly on what’s working and adjust as needed.</h1>";
+            }
+        }
+
+        // Load the first question on page load
+        window.onload = loadQuestion;
+    </script>
+</body>
+</html>

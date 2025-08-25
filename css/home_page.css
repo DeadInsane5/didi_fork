@@ -1,0 +1,43 @@
+* {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#cards_container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    padding: 4rem;
+}
+
+.health_card {
+    width: 20rem;
+    height: 16rem;
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.health_card:hover {
+    transform: scale(1.05);
+}
+
+.card_heading {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+
+img {
+    width: 4rem;
+}

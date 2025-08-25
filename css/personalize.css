@@ -1,0 +1,28 @@
+* {
+    text-decoration: none;
+}
+
+body {
+    text-decoration: none;
+}
+
+#quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#answers {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto );
+    gap: 1rem;
+}
+
+button {
+    width: 20rem;
+    height: 2rem;
+    background-color: #3c6e71;
+}
