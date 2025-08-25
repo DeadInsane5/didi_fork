@@ -1,28 +1,43 @@
+:root {
+  --primary: #48cae4;
+}
+
 * {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #quiz {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 #answers {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto );
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
 }
 
 button {
-    width: 20rem;
-    height: 2rem;
-    background-color: #3c6e71;
+  width: 20rem;
+  height: 5rem;
+  padding: 12px;
+  background-color: var(--primary);
+  color: snow;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid darkslategray;
+  border-radius: 12px;
+}
+
+button:hover {
+  /* transform: scale(1.02); */
+  background-color: #21BEDE;
 }
