@@ -9,13 +9,21 @@ body {
 }
 
 #home_container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem;
+  position: absolute;
+  left: 400px;
+  height: 300px;
+}
+
+#home_container:hover {
+  transform: scale(0.98);
+}
+
+#img {
+  position: absolute;
+  left: 5px;
+  width: 50px;
+  height: 150px;
+  transform: scale(0.8);
 }
 
 #button_container {
@@ -23,6 +31,9 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  position: absolute;
+  right: 120px;
+  bottom: 300px;
 }
 
 img {
@@ -49,6 +60,8 @@ button:hover {
 h1 {
   font-size: 100px;
   margin: 15px;
+  position: absolute;
+  bottom: 650px;
 }
 
 h3 {
@@ -63,4 +76,63 @@ p {
   position: absolute;
   right: 7%;
   padding-top: 15px;
+}
+/*top bar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 15px 40px;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight:  bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+   color: #4facfe;
+}
+
+.panel {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100vw;
+  height: 50vh;
+  background: #f4f7fb;
+  color: #333;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.4 ease;
+  padding: 40px;
+  box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.has-panel:hover .panel {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
